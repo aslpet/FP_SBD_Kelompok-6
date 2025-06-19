@@ -1,4 +1,5 @@
-### SQL ###
+### Insyaallah nggak ada yang kurang dari database-nya :)
+### SQL ### -- ini dah fix harusnya, nggak ada yang berubah buat sql, tinggal run querynya.
 
 CREATE DATABASE fp_sbd_library;
 USE fp_sbd_library;
@@ -41,4 +42,11 @@ CREATE TABLE peminjaman (
 );
 
 ### No SQL ###
+Query: (walaupun sebenarnya tidak diperlukan, hanya databasenya saja yang diperlukan)
+FP_SBD_Library <-- Database di MongoDB
+db.createCollection("activity_log") <-- nama collections-nya (langsung buat aja klo mau)
+db.createCollection("search_history") <-- nama collections-nya 
+db.createCollection("reviews") <-- nama collections-nya 
+db.createCollection("wishlist_notifications") <-- nama collections-nya 
+db.createCollection("book_recommendations") <-- nama collections-nya 
 
