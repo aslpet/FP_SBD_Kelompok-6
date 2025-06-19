@@ -1,3 +1,11 @@
+# install python dulu di komputer/laptop mu, pastiin PATH nya juga pas install python-nya,
+# nanti buat folder, trus buat .txt ini lalu ikuti:
+# 1. bikin requirements.txt
+# 2. isi dari requirements.txt itu yang dibawah ini
+# 3. kalo udah install python-nya, nanti masuk ke terminal (ctrl+`), lalu tulis "pip install -r requirements.txt"
+# 4. harusnya setelah itu di terminal ke-install dari ketiga connector dibawah ini.
+# 5. kalo udh ke-install connectornya, baru lanjut ke .py nya.
+
 mysql-connector-python
 pymongo
 tabulate
