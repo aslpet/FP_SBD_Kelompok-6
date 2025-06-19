@@ -1,0 +1,44 @@
+### SQL ###
+
+CREATE DATABASE fp_sbd_library;
+USE fp_sbd_library;
+
+-- 1. Users
+CREATE TABLE users (
+    user_id VARCHAR(10) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('member', 'staff') NOT NULL DEFAULT 'member',
+    registered_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    is_active BOOLEAN DEFAULT TRUE
+);
+
+-- 2. Books
+CREATE TABLE buku (
+    buku_id VARCHAR(10) PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    publisher VARCHAR(100) NOT NULL,
+    year YEAR NOT NULL,
+    genre VARCHAR(100) DEFAULT 'Umum',
+    stock INT DEFAULT 0 CHECK (stock >= 0),
+    total_copies INT DEFAULT 0 CHECK (total_copies >= 0)
+);
+
+-- 3. Borrowings
+CREATE TABLE peminjaman (
+    pinjam_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(10) NOT NULL,
+    buku_id VARCHAR(10) NOT NULL,
+    pinjam_date DATE NOT NULL,
+    due_date DATE NOT NULL,
+    return_date DATE,
+    fine_amount DECIMAL(10, 2) DEFAULT 0.00,
+    extended BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (buku_id) REFERENCES buku(buku_id)
+);
+
+### No SQL ###
+
